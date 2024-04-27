@@ -25,7 +25,7 @@ def get_all_pokemon_info():
     poke_url = "https://pokeapi.co/api/v2/pokemon/"
     poke_id = 1
 
-    while poke_id <= 200:
+    while poke_id <= 15:
         response = requests.get(poke_url + str(poke_id))
         data = response.json()
 
