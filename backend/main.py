@@ -5,20 +5,6 @@ import requests
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
-
-pokeurl = "https://pokeapi.co/api/v2/pokemon/pikachu"
-@app.route('/api/data')
-def pokemon():
-    response = requests.get(pokeurl)
-    data = response.json()
-    pokemon_info = {
-        "name": data["name"],
-        "height": data["height"],
-        "abilities": [ability["ability"]["name"] for ability in data["abilities"]],
-        "types": [type_data["type"]["name"] for type_data in data["types"]]
-    }
-    return jsonify(pokemon_info)
-
 @app.route('/api/data/home')
 def get_all_pokemon_info():
     all_pokemon_info = []
