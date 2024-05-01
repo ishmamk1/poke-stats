@@ -25,7 +25,10 @@ def get_all_pokemon_info():
         all_pokemon_info.append(pokemon_info)
         poke_id += 1
     return jsonify(all_pokemon_info)
-    
+
+@app.route('/api/data/pokemon', methods=["POST"])
+def get_pokemon_info():
+    return "aa"
     
 
 if __name__ == "__main__":
